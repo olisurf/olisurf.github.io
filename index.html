@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prince Theophilus Sarfo - Software Developer</title>
+  <meta name="description" content="Computer Science student at the University of Ghana building secure web apps, AI agents and websites for businesses." />
+  <meta property="og:title" content="Prince Theophilus Sarfo - Software Developer" />
+  <meta property="og:description" content="Secure web apps, AI agents and websites for businesses in Ghana." />
+  <meta property="og:image" content="https://olisurf.github.io/images/chalepass-home.jpg" />
+  <meta name="theme-color" content="#0b1020" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0b1020;
+      --bg-2: #111832;
+      --card: #141c38;
+      --line: #263159;
+      --text: #e8ecf8;
+      --muted: #9aa5c6;
+      --accent: #5eead4;
+      --accent-2: #fbbf24;
+      --radius: 18px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: radial-gradient(1200px 600px at 80% -10%, #1b2a5c 0%, transparent 60%), var(--bg);
+      color: var(--text);
+      font: 16px/1.65 "Inter", system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    img { max-width: 100%; height: auto; display: block; }
+    .wrap { width: min(1100px, 100% - 32px); margin-inline: auto; }
+    h1, h2, h3 { font-family: "Space Grotesk", "Inter", sans-serif; line-height: 1.1; margin: 0; }
+    :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+
+    /* nav */
+    header { position: sticky; top: 0; z-index: 10; backdrop-filter: blur(12px); background: rgb(11 16 32 / 0.75); border-bottom: 1px solid rgb(38 49 89 / 0.6); }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .brand { font-family: "Space Grotesk", sans-serif; font-weight: 700; font-size: 1.1rem; text-decoration: none; }
+    .brand span { color: var(--accent); }
+    .nav nav { display: flex; gap: 6px; }
+    .nav nav a { text-decoration: none; color: var(--muted); font-size: 0.92rem; padding: 8px 12px; border-radius: 999px; transition: color .2s, background .2s; }
+    .nav nav a:hover { color: var(--text); background: var(--bg-2); }
+
+    /* hero */
+    .hero { padding: 96px 0 72px; }
+    .eyebrow { font-family: "JetBrains Mono", monospace; font-size: 0.82rem; letter-spacing: .08em; color: var(--accent); text-transform: uppercase; }
+    .hero h1 { font-size: clamp(2.6rem, 6.5vw, 4.8rem); margin-top: 18px; max-width: 16ch; letter-spacing: -0.02em; }
+    .hero h1 em { font-style: normal; color: var(--accent); }
+    .hero p.lead { color: var(--muted); font-size: 1.15rem; max-width: 60ch; margin: 22px 0 0; }
+    .ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 22px; border-radius: 999px; font-weight: 600; text-decoration: none; transition: transform .15s, background .2s, border-color .2s; }
+    .btn.primary { background: var(--accent); color: #062421; }
+    .btn.primary:hover { background: #99f6e4; }
+    .btn.ghost { border: 1px solid var(--line); }
+    .btn.ghost:hover { border-color: var(--accent); }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 36px; }
+    .chip { font-family: "JetBrains Mono", monospace; font-size: 0.78rem; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 5px 12px; }
+
+    /* sections */
+    section { padding: 72px 0; }
+    .section-head { margin-bottom: 36px; }
+    .section-head h2 { font-size: clamp(1.9rem, 4vw, 2.6rem); margin-top: 10px; }
+    .section-head p { color: var(--muted); max-width: 62ch; margin: 12px 0 0; }
+
+    /* projects */
+    .project { display: grid; grid-template-columns: 1.05fr 1fr; gap: 40px; align-items: center; padding: 36px; border: 1px solid var(--line); border-radius: 24px; background: linear-gradient(180deg, var(--card), var(--bg-2)); margin-bottom: 28px; }
+    .project.flip .media { order: 2; }
+    .project h3 { font-size: 1.9rem; }
+    .project .tag { color: var(--accent-2); font-family: "JetBrains Mono", monospace; font-size: 0.8rem; letter-spacing: .05em; text-transform: uppercase; }
+    .project p { color: var(--muted); margin: 12px 0 0; }
+    .project ul { margin: 18px 0 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+    .project li { position: relative; padding-left: 22px; font-size: 0.96rem; }
+    .project li::before { content: ""; position: absolute; left: 2px; top: 0.6em; width: 8px; height: 8px; border-radius: 2px; background: var(--accent); }
+    .project li strong { color: var(--text); }
+    .stack { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 20px; }
+    .stack span { font-size: 0.75rem; font-family: "JetBrains Mono", monospace; background: rgb(94 234 212 / 0.08); color: var(--accent); border-radius: 6px; padding: 3px 8px; }
+    .links { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 22px; font-weight: 600; font-size: 0.95rem; }
+    .links a { color: var(--accent); text-decoration: none; }
+    .links a:hover { text-decoration: underline; }
+    .links .note { color: var(--muted); font-weight: 500; }
+    .media { position: relative; }
+    .shot { border-radius: 14px; border: 1px solid var(--line); box-shadow: 0 30px 60px -25px rgb(0 0 0 / 0.7); }
+    .shot.small { position: absolute; width: 42%; right: -14px; bottom: -22px; border-radius: 12px; }
+
+    /* jarvis terminal */
+    .terminal { background: #070b16; border: 1px solid var(--line); border-radius: 14px; font: 0.86rem/1.7 "JetBrains Mono", monospace; overflow: hidden; box-shadow: 0 30px 60px -25px rgb(0 0 0 / 0.7); }
+    .terminal .bar { display: flex; gap: 6px; padding: 10px 14px; border-bottom: 1px solid var(--line); background: #0c1226; }
+    .terminal .bar i { width: 10px; height: 10px; border-radius: 50%; background: #3a4570; }
+    .terminal .body { padding: 16px 18px; }
+    .t-you { color: #93c5fd; }
+    .t-j { color: var(--accent); }
+    .t-tool { color: #64748b; }
+    .t-warn { color: var(--accent-2); }
+    .t-btns { display: inline-flex; gap: 8px; margin: 4px 0 6px 18px; }
+    .t-btns b { border: 1px solid var(--line); border-radius: 6px; padding: 0 10px; font-weight: 500; }
+    .t-btns b:first-child { border-color: var(--accent); color: var(--accent); }
+
+    /* team project */
+    .mini { border: 1px dashed var(--line); border-radius: var(--radius); padding: 26px 28px; display: flex; flex-wrap: wrap; gap: 10px 28px; align-items: baseline; }
+    .mini h3 { font-size: 1.25rem; }
+    .mini p { color: var(--muted); margin: 0; flex: 1 1 420px; }
+
+    /* websites grid */
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .site { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--card); text-decoration: none; transition: transform .2s, border-color .2s; }
+    .site:hover { transform: translateY(-4px); border-color: var(--accent); }
+    .site img { aspect-ratio: 16/10; object-fit: cover; object-position: top; width: 100%; }
+    .site div { padding: 16px 18px 18px; }
+    .site h3 { font-size: 1.1rem; }
+    .site p { color: var(--muted); font-size: 0.9rem; margin: 6px 0 0; }
+
+    /* skills + about */
+    .two { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+    .panel { border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; background: var(--card); }
+    .panel h3 { font-size: 1.2rem; margin-bottom: 14px; }
+    .panel dl { margin: 0; display: grid; gap: 12px; }
+    .panel dt { font-family: "JetBrains Mono", monospace; font-size: 0.78rem; color: var(--accent); text-transform: uppercase; letter-spacing: .06em; }
+    .panel dd { margin: 2px 0 0; color: var(--muted); }
+    .panel p { color: var(--muted); margin: 0 0 12px; }
+
+    /* contact */
+    .contact { text-align: center; border: 1px solid var(--line); border-radius: 28px; padding: 56px 24px; background: radial-gradient(600px 240px at 50% 0%, rgb(94 234 212 / 0.12), transparent), var(--card); }
+    .contact h2 { font-size: clamp(2rem, 4.5vw, 3rem); }
+    .contact p { color: var(--muted); margin: 14px auto 0; max-width: 52ch; }
+    .contact .ctas { justify-content: center; }
+    footer { padding: 36px 0 48px; color: var(--muted); font-size: 0.85rem; text-align: center; }
+
+    @media (max-width: 900px) {
+      .project { grid-template-columns: 1fr; padding: 24px; gap: 28px; }
+      .project.flip .media { order: 0; }
+      .shot.small { right: -6px; bottom: -14px; }
+      .grid { grid-template-columns: 1fr 1fr; }
+      .two { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .nav nav a:not(:last-child) { display: none; }
+      .hero { padding: 64px 0 48px; }
+      .grid { grid-template-columns: 1fr; }
+      section { padding: 52px 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#top">Prince<span>.</span></a>
+      <nav aria-label="Main">
+        <a href="#work">Work</a>
+        <a href="#websites">Websites</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap">
+        <p class="eyebrow">Computer Science · University of Ghana</p>
+        <h1>I build software that <em>holds up</em> in the real world.</h1>
+        <p class="lead">
+          I'm Prince Theophilus Sarfo, a developer in Accra. I build secure web apps, AI agents and websites for businesses -
+          from event tickets that can't be faked, to a security scanner anyone can use, to a voice assistant that asks
+          before it acts.
+        </p>
+        <div class="ctas">
+          <a class="btn primary" href="#work">See my work</a>
+          <a class="btn ghost" href="#contact">Get in touch</a>
+        </div>
+        <div class="chips" aria-label="Main technologies">
+          <span class="chip">TypeScript</span><span class="chip">React</span><span class="chip">Node.js</span><span class="chip">Python</span>
+          <span class="chip">Security</span><span class="chip">AI agents</span><span class="chip">Payments</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Featured projects</p>
+          <h2>Things I've built</h2>
+          <p>Each one solves a real problem - and each one is built to be safe when things go wrong.</p>
+        </div>
+
+        <article class="project">
+          <div class="media">
+            <img class="shot" src="images/chalepass-home.jpg" alt="Chale Pass home page with events in Accra" width="1200" height="900" loading="lazy" />
+            <img class="shot small" src="images/chalepass-ticket.jpg" alt="A Chale Pass ticket with a live QR code" width="1200" height="900" loading="lazy" />
+          </div>
+          <div>
+            <p class="tag">Full-stack · Payments · Security</p>
+            <h3>Chale Pass</h3>
+            <p>An event ticketing platform for Ghana. Organisers sell tickets, buyers pay with mobile money or card, and door staff scan guests in with any phone.</p>
+            <ul>
+              <li><strong>Tickets that can't be faked:</strong> QR codes change every 30 seconds (HMAC-signed), so screenshots stop working within a minute.</li>
+              <li><strong>Fast gates, even offline:</strong> each scan is decided on the phone in under 5 ms and synced to the server in about 250 ms.</li>
+              <li><strong>Money handled safely:</strong> Paystack split payments, refunds and cancellations, organiser ID checks and held payouts for new organisers.</li>
+              <li><strong>Crowd control:</strong> live headcount, venue capacity, a control room for organisers, and fake-ticket alerts.</li>
+            </ul>
+            <div class="stack"><span>TypeScript</span><span>React</span><span>Node.js</span><span>Express</span><span>Prisma</span><span>Paystack</span><span>Playwright</span></div>
+            <div class="links"><span class="note">Private code - live demo on request</span></div>
+          </div>
+        </article>
+
+        <article class="project flip">
+          <div class="media">
+            <img class="shot" src="images/sitecheck.jpg" alt="SiteCheck report showing a grade and a live screenshot of the checked site" width="992" height="503" loading="lazy" />
+          </div>
+          <div>
+            <p class="tag">Security · Open source</p>
+            <h3>SiteCheck</h3>
+            <p>A free website security checker. Type in a website and get an A-F report in plain English: what's wrong, why it matters and how to fix it - built for small businesses, schools and churches.</p>
+            <ul>
+              <li><strong>Checks what attackers see first:</strong> HTTPS, security headers, cookies, exposed secrets and backups, outdated software, email spoofing protection.</li>
+              <li><strong>Can't be turned into a weapon:</strong> blocks server-side request forgery by checking every IP address at connection time - including inside its screenshot browser.</li>
+              <li><strong>Honest results:</strong> recognises bot-protection and error pages instead of grading them, and never raises false alarms on "page not found" pages.</li>
+              <li><strong>Tested:</strong> 24 automated tests, including a deliberately insecure fake website.</li>
+            </ul>
+            <div class="stack"><span>TypeScript</span><span>Node.js</span><span>React</span><span>Tailwind</span><span>Playwright</span></div>
+            <div class="links"><a href="https://github.com/olisurf/sitecheck">View the code on GitHub &rarr;</a></div>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="media">
+            <div class="terminal" role="img" aria-label="Example Jarvis conversation where Jarvis asks permission before sending a message">
+              <div class="bar"><i></i><i></i><i></i></div>
+              <div class="body">
+                <div><span class="t-you">you&gt;</span> Hey Jarvis, tell Kofi I'm running 10 minutes late</div>
+                <div class="t-tool">  [using read_messages]</div>
+                <div><span class="t-j">jarvis&gt;</span> I'll reply to Kofi on WhatsApp: "Running 10 minutes late."</div>
+                <div class="t-warn">  ! Jarvis wants to send a WhatsApp message to Kofi</div>
+                <div class="t-btns"><b>Allow</b><b>Deny</b></div>
+                <div><span class="t-you">you&gt;</span> go ahead</div>
+                <div class="t-tool">  [using send_reply]</div>
+                <div><span class="t-j">jarvis&gt;</span> Sent.</div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <p class="tag">AI agent · Voice · Safety</p>
+            <h3>Jarvis</h3>
+            <p>A voice-controlled AI assistant for my laptop and Android phone. Say "Hey Jarvis" and it can open apps and files, play music, read and reply to messages, and run my day.</p>
+            <ul>
+              <li><strong>An agent with tools:</strong> the model chooses from Python tools I wrote; my code decides what actually runs.</li>
+              <li><strong>Private by design:</strong> wake word and speech recognition run on the laptop, so no audio leaves it until you say "Hey Jarvis".</li>
+              <li><strong>Safety enforced in code, not trusted to the AI:</strong> risky actions need approval and default to no; a locked phone can only use harmless tools.</li>
+              <li><strong>Phone link:</strong> a private Tailscale network, with one-time tokens on every approval button.</li>
+            </ul>
+            <div class="stack"><span>Python</span><span>Claude API</span><span>Gemini</span><span>Whisper</span><span>Kotlin</span><span>Tailscale</span></div>
+            <div class="links"><span class="note">Private code - demo on request</span></div>
+          </div>
+        </article>
+
+        <div class="mini">
+          <h3>Campus navigation app</h3>
+          <p>Team of five. I built the entire frontend and parts of the backend of a campus guide for a Ghanaian university: 130+ locations, Android and web, live maps and an admin dashboard. Details on request.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="websites">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Web design</p>
+          <h2>Websites for businesses</h2>
+          <p>Fast, mobile-first websites that turn visitors into customers - with menus, bookings and orders sent straight to WhatsApp.</p>
+        </div>
+        <div class="grid">
+          <a class="site" href="https://mays-coffee.vercel.app">
+            <img src="images/mays-coffee.jpg" alt="May's Coffee website" width="1200" height="750" loading="lazy" />
+            <div><h3>May's Coffee</h3><p>Specialty coffee shop - menu, story and table booking.</p></div>
+          </a>
+          <a class="site" href="https://athletic-oval.vercel.app">
+            <img src="images/athletic-oval.jpg" alt="Athletic Oval basketball academy website" width="1200" height="750" loading="lazy" />
+            <div><h3>Athletic Oval</h3><p>Basketball academy - events, teams and registration.</p></div>
+          </a>
+          <a class="site" href="https://lumi-sleep-dream.lovable.app">
+            <img src="images/lumi.jpg" alt="Lumi product landing page" width="1200" height="708" loading="lazy" />
+            <div><h3>Lumi</h3><p>Product landing page for a smart sleep lamp.</p></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap two">
+        <div class="panel">
+          <h3>About me</h3>
+          <p>I'm a second-year Computer Science student at the University of Ghana. I learn fastest by building things people actually use, and I care about getting the details right - especially when security or money is involved.</p>
+          <p>I'm most interested in software engineering, systems and security, and in how to keep software reliable as more of it is written with AI.</p>
+          <p>Open to internships and freelance web projects.</p>
+        </div>
+        <div class="panel">
+          <h3>Skills</h3>
+          <dl>
+            <div><dt>Languages</dt><dd>TypeScript, JavaScript, Python, SQL, HTML/CSS</dd></div>
+            <div><dt>Frameworks</dt><dd>React, Node.js, Express, Prisma, Tailwind CSS, Capacitor</dd></div>
+            <div><dt>Security</dt><dd>SSRF prevention, HMAC tokens, rate limiting, secure auth (2FA, password reset)</dd></div>
+            <div><dt>AI</dt><dd>Agents with tool use, Claude and Gemini APIs, speech recognition (Whisper)</dd></div>
+            <div><dt>Tools</dt><dd>Git, GitHub, Vercel, Paystack, Playwright testing</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="contact">
+          <h2>Let's build something.</h2>
+          <p>Have a project, an internship or a question? I'd love to hear from you.</p>
+          <div class="ctas">
+            <a class="btn primary" href="mailto:sarfoprince940@gmail.com">Email me</a>
+            <a class="btn ghost" href="https://www.linkedin.com/in/prince-sarfo-69a923275">LinkedIn</a>
+            <a class="btn ghost" href="https://github.com/olisurf">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">&copy; 2026 Prince Theophilus Sarfo · Accra, Ghana</div>
+  </footer>
+</body>
+</html>
