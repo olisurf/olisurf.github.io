@@ -117,6 +117,15 @@
     .site h3 { font-size: 1.1rem; }
     .site p { color: var(--muted); font-size: 0.9rem; margin: 6px 0 0; }
 
+    /* currently building */
+    .building { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin-top: 28px; }
+    .wip { position: relative; border: 1px dashed var(--line); border-radius: var(--radius); padding: 24px; background: repeating-linear-gradient(135deg, rgb(20 28 56 / 0.9) 0 14px, rgb(17 24 50 / 0.9) 14px 28px); }
+    .wip .lock { display: inline-flex; align-items: center; gap: 6px; font-family: "JetBrains Mono", monospace; font-size: 0.75rem; color: var(--accent-2); border: 1px solid rgb(251 191 36 / 0.4); border-radius: 999px; padding: 3px 10px; }
+    .wip h3 { font-size: 1.15rem; margin-top: 14px; }
+    .wip p { color: var(--muted); font-size: 0.92rem; margin: 6px 0 16px; }
+    .wip a { color: var(--accent); font-weight: 600; text-decoration: none; font-size: 0.92rem; }
+    .wip a:hover { text-decoration: underline; }
+
     /* skills + about */
     .two { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
     .panel { border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; background: var(--card); }
@@ -139,6 +148,7 @@
       .shot.small { right: -6px; bottom: -14px; }
       .grid { grid-template-columns: 1fr 1fr; }
       .two { grid-template-columns: 1fr; }
+      .building { grid-template-columns: 1fr; }
     }
     @media (max-width: 600px) {
       .nav nav a:not(:last-child) { display: none; }
@@ -291,6 +301,31 @@
             <img src="images/lumi.jpg" alt="Lumi product landing page" width="1200" height="708" loading="lazy" />
             <div><h3>Lumi</h3><p>Product landing page for a smart sleep lamp.</p></div>
           </a>
+          <a class="site" href="https://petal-salon-work.lovable.app">
+            <img src="images/bloom-salon.jpg" alt="Bloom Beauty Studio salon website" width="1200" height="750" loading="lazy" />
+            <div><h3>Bloom Beauty Studio</h3><p>Salon website - services, gallery and WhatsApp booking.</p></div>
+          </a>
+          <a class="site" href="https://hoop-hub-glow.lovable.app">
+            <img src="images/athletic-oval-2.jpg" alt="Alternate Athletic Oval basketball academy website design" width="1200" height="750" loading="lazy" />
+            <div><h3>Athletic Oval - alternate design</h3><p>A bolder take on the academy site - programs, teams and events.</p></div>
+          </a>
+        </div>
+
+        <h3 style="margin-top:56px;font-size:1.5rem">Currently building</h3>
+        <p style="color:var(--muted);margin:8px 0 0;max-width:62ch">Client projects in progress are kept private until they launch. Ask for a private preview and I'll share it with you directly, with the client's permission.</p>
+        <div class="building">
+          <div class="wip">
+            <span class="lock"><svg width="12" height="12" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M5 9V7a5 5 0 0 1 10 0v2h1v9H4V9zm2 0h6V7a3 3 0 0 0-6 0z"/></svg> Private · in progress</span>
+            <h3>Photography studio website</h3>
+            <p>Accra · portfolio gallery with category filters, packages and pricing, booking with online payment.</p>
+            <a href="mailto:sarfoprince940@gmail.com?subject=Private%20preview%20request%3A%20photography%20studio%20website">Request a private preview &rarr;</a>
+          </div>
+          <div class="wip">
+            <span class="lock"><svg width="12" height="12" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M5 9V7a5 5 0 0 1 10 0v2h1v9H4V9zm2 0h6V7a3 3 0 0 0-6 0z"/></svg> Private · in progress</span>
+            <h3>Café website with WhatsApp ordering</h3>
+            <p>East Legon · menu and pastry counter, table reservations, an order cart that sends straight to WhatsApp, live opening hours.</p>
+            <a href="mailto:sarfoprince940@gmail.com?subject=Private%20preview%20request%3A%20caf%C3%A9%20website">Request a private preview &rarr;</a>
+          </div>
         </div>
       </div>
     </section>
