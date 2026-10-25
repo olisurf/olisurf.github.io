@@ -136,6 +136,11 @@
     .site div { padding: 16px 18px 18px; }
     .site h3 { font-size: 1.1rem; }
     .site.fit img { object-fit: contain; object-position: center; background: #0a0f1e; }
+    .status { display: inline-flex; align-items: center; gap: 6px; margin-top: 10px; font-family: "JetBrains Mono", monospace; font-size: 0.72rem; }
+    .status.live { color: var(--accent); }
+    .status.local { color: var(--muted); }
+    .status.local::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #64748b; }
+    .status.live::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
     .badge { display: inline-block; margin-left: 6px; vertical-align: middle; font-family: "JetBrains Mono", monospace; font-size: 0.68rem; color: var(--accent-2); border: 1px solid rgb(251 191 36 / 0.45); border-radius: 999px; padding: 1px 8px; }
     .site p { color: var(--muted); font-size: 0.9rem; margin: 6px 0 0; }
 
@@ -313,47 +318,47 @@
         <div class="grid">
           <a class="site" href="https://mays-coffee.vercel.app">
             <img src="images/mays-coffee.jpg" alt="May's Coffee website" width="1200" height="750" loading="lazy" />
-            <div><h3>May's Coffee</h3><p>Specialty coffee shop - menu, story and table booking.</p></div>
+            <div><h3>May's Coffee</h3><p>Specialty coffee shop - menu, story and table booking.</p><span class="status live">Live site &#8599;</span></div>
           </a>
           <a class="site" href="https://athletic-oval.vercel.app">
             <img src="images/athletic-oval.jpg" alt="Athletic Oval basketball academy website" width="1200" height="750" loading="lazy" />
-            <div><h3>Athletic Oval</h3><p>Basketball academy - events, teams and registration.</p></div>
+            <div><h3>Athletic Oval</h3><p>Basketball academy - events, teams and registration.</p><span class="status live">Live site &#8599;</span></div>
           </a>
           <a class="site" href="https://lumi-sleep-dream.lovable.app">
             <img src="images/lumi.jpg" alt="Lumi product landing page" width="1200" height="708" loading="lazy" />
-            <div><h3>Lumi</h3><p>Product landing page for a smart sleep lamp.</p></div>
+            <div><h3>Lumi</h3><p>Product landing page for a smart sleep lamp.</p><span class="status live">Live site &#8599;</span></div>
           </a>
           <a class="site" href="https://petal-salon-work.lovable.app">
             <img src="images/bloom-salon.jpg" alt="Bloom Beauty Studio salon website" width="1200" height="750" loading="lazy" />
-            <div><h3>Bloom Beauty Studio</h3><p>Salon website - services, gallery and WhatsApp booking.</p></div>
+            <div><h3>Bloom Beauty Studio</h3><p>Salon website - services, gallery and WhatsApp booking.</p><span class="status live">Live site &#8599;</span></div>
           </a>
           <a class="site" href="https://hoop-hub-glow.lovable.app">
             <img src="images/athletic-oval-2.jpg" alt="Hoop Hub basketball academy website" width="1200" height="750" loading="lazy" />
-            <div><h3>Hoop Hub</h3><p>Basketball academy website - programs, teams, events and sign-ups.</p></div>
+            <div><h3>Hoop Hub</h3><p>Basketball academy website - programs, teams, events and sign-ups.</p><span class="status live">Live site &#8599;</span></div>
           </a>
           <div class="site">
             <img src="images/meridian-homes.jpg" alt="Meridian Homes real estate website" width="1200" height="750" loading="lazy" />
-            <div><h3>Meridian Homes</h3><p>Full-stack real estate site - listings with search and filters, enquiries and an admin panel (Node.js, Express, SQLite).</p></div>
+            <div><h3>Meridian Homes</h3><p>Full-stack real estate site - listings with search and filters, enquiries and an admin panel (Node.js, Express, SQLite).</p><span class="status local">Built &middot; not deployed yet (screenshot from my local copy)</span></div>
           </div>
           <div class="site">
             <img src="images/athletic-oval-match.jpg" alt="Rulers of the Court basketball team website" width="1200" height="650" loading="lazy" />
-            <div><h3>Rulers of the Court <span class="badge">In progress</span></h3><p>Pro basketball team site - roster, schedule, news and match tickets.</p></div>
+            <div><h3>Rulers of the Court <span class="badge">In progress</span></h3><p>Pro basketball team site - roster, schedule, news and match tickets.</p><span class="status local">Built &middot; not deployed yet (screenshot from my local copy)</span></div>
           </div>
           <div class="site">
             <img src="images/provisions-mart.jpg" alt="Provisions Mart online grocery shop" width="1200" height="640" loading="lazy" />
-            <div><h3>Provisions Mart</h3><p>Online grocery shop - categories, search, cart and weekly delivery.</p></div>
+            <div><h3>Provisions Mart</h3><p>Online grocery shop - categories, search, cart and weekly delivery.</p><span class="status local">Built &middot; not deployed yet (screenshot from my local copy)</span></div>
           </div>
           <div class="site fit">
             <img src="images/weatherly.jpg" alt="Weatherly weather app showing Accra's forecast" width="972" height="987" loading="lazy" />
-            <div><h3>Weatherly</h3><p>Weather app - live conditions, location search and a 5-day forecast.</p></div>
+            <div><h3>Weatherly</h3><p>Weather app - live conditions, location search and a 5-day forecast.</p><span class="status local">Built &middot; not deployed yet (screenshot from my local copy)</span></div>
           </div>
           <div class="site fit">
             <img src="images/ecobucks.jpg" alt="EcoBucks recycling rewards mobile app" width="702" height="1036" loading="lazy" />
-            <div><h3>EcoBucks <span class="badge">In progress</span></h3><p>Mobile app design - recycling rewards, community challenges and points.</p></div>
+            <div><h3>EcoBucks <span class="badge">In progress</span></h3><p>Mobile app design - recycling rewards, community challenges and points.</p><span class="status local">Built &middot; not deployed yet (screenshot from my local copy)</span></div>
           </div>
           <div class="site">
             <img src="images/angloworld.jpg" alt="AngloWorld airline flight booking page" width="1200" height="650" loading="lazy" />
-            <div><h3>AngloWorld <span class="badge">In progress</span></h3><p>Airline website - flight search, deals, booking, check-in and flight status.</p></div>
+            <div><h3>AngloWorld <span class="badge">In progress</span></h3><p>Airline website - flight search, deals, booking, check-in and flight status.</p><span class="status local">Built &middot; not deployed yet (screenshot from my local copy)</span></div>
           </div>
         </div>
 
